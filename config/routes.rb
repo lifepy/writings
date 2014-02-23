@@ -10,7 +10,9 @@ end
 
 class Sitedomain
   def self.matches?(request)
-    request.host =~ /^[a-zA-Z0-9\-]+\.#{Regexp.escape APP_CONFIG["host"]}$/ or request.host !~ /#{Regexp.escape APP_CONFIG["host"]}$/
+    hostname = APP_CONFIG["host"]
+    hostname = hostname.slice(hostname.index('.')+1, hostname.size)
+    request.host =~ /^[a-zA-Z0-9\-]+\.#{Regexp.escape hostname}$/ or request.host !~ /#{Regexp.escape APP_CONFIG['host']}$/
   end
 end
 
