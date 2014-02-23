@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '4.0.0'
 
@@ -57,3 +57,5 @@ end
 group :test do
   gem 'fakeweb', '~> 1.3.0'
 end
+
+gem 'unicorn'
